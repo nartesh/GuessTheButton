@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
     <style>
-      .lastResult {
+      .display_message {
         color: white;
         padding: 0px;
         font-family: verdana;
@@ -22,21 +22,21 @@
         <button style="height:100px;width:100px" type="button" class="btn btn-success btn-lg" onclick="random_check();">3</button>
       </center>
     </div><br><br><br>
-    <div class="result">
-      <center><p class="lastResult"></p></center>
+    <div class="message">
+      <center><p class="display_message"></p></center>
     </div>
   </body>
   <script>
     let randomNumber = Math.floor(Math.random() * 3) + 1;
-    const lastResult = document.querySelector('.lastResult');
+    const display_message = document.querySelector('.display_message');
     function random_check() {
       let winningNumber = Math.floor(Math.random() * 3) + 1;
       if (randomNumber === winningNumber) {
-        lastResult.textContent = 'Congratulations! You guessed the button!';
-        lastResult.style.backgroundColor = 'blue';
+        display_message.textContent = 'Congratulations! You guessed the button!';
+        display_message.style.backgroundColor = 'blue';
       } else {
-        lastResult.textContent = 'Sorry, you guessed it! Try again!';
-        lastResult.style.backgroundColor = 'red';
+        display_message.textContent = 'Sorry, you guessed it! Try again!';
+        display_message.style.backgroundColor = 'red';
       }
     }
   </script>
